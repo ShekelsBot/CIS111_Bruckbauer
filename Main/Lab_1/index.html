@@ -21,19 +21,64 @@ Mehran Viseh
 		margin 0;
 		height 100%;
 		font-family: 'Arvo';
+        
 	}
+	
+	ul{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+	
+	li {
+		float: left;
+		
+	}
+	
+	li a {
+		display: block;
+		color: white;
+		text-allign: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	
+	li a:hover {
+		background-color: #111;
+	}
+	<!-- Column Split -->
+	*{
+		box-sizing: border-box;
+	}
+	
+	.row {
+		display: flex;
+		}
+	<!-- Create two columns of eqaul size next to each other -->
+	.column {
+		flex: 50%;
+		padding: 10px;
+	}
+		
 	</style>
 </head>
 <body>
 
+<ul>
+	<li><a><strong>Bruckbauer</strong></a></li>
+	<li><a class="active" href="#home">Home</a></li>
+	<li><a href="#contact">Contact</a></li>
+	<li><a href="#about">About</a></li>
+</ul>
+
 <div class="w3-container w3-green">
 	<h1>About Me</h1>
-	<p>Things about me</p>
 </div>
 
-<div class="w3-row-padding">
-	<div class="w3-third">
-		<h2>Summary</h2>
+<div class="rows">
+	<div class="column" style="background-color:#aaa;">
 		<p>
 		My name is Andrew Bruckbauer. I have been interested in technology for as long as a I can remember. 
 		I am currently seeking my bachelor’s in computer science and trying to get a focus on Cyber Security. 
@@ -46,8 +91,7 @@ Mehran Viseh
 		and I wouldn’t have it any other way.
 		</p>
 	</div>
-	
-	<div class="w3-third">
+	<div class="column" style="background-color:#bbb;">
 		<h2>The Boat</h2>
 		<script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
 			<div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
@@ -59,8 +103,8 @@ Mehran Viseh
 			  <object data="https://lh3.googleusercontent.com/N5Po3tSeJiAWK3zAYNVlqAaohzq3govtjaBppdyujppTgcKap9FhWllqdaX5nLPdC2UMpLCK9s1nSpMhDQVqDBkiSbbJlCvFZCYn3aQPWphO8mbCXubcwAbatPxtwwEBPb3bKvyicBk=w1920-h1080"></object>
 			  <object data="https://lh3.googleusercontent.com/F_GYLbnikOA_YqttHFu-9TE6JjeY-CqVjE41kB83mHuppPs-Wbxq6XM8cNQfN8SCBz-OINxNd0EtpZcHpfZ_G5e3-93csIyeUF64DXYiANk90ZAbUWQdVzMDFaCFP7mPuTYX-L2P1hA=w1920-h1080"></object>
 			<p>Slideshow of me and car stuff</p>
-			</div>
-			
+	</div>
+</div>		
 
 	<div class="w3-third">
 		<h2>The end goal</h2>
@@ -77,6 +121,7 @@ Mehran Viseh
 		<iframe width="420" height="315"
 		src="https://www.youtube.com/embed/OjwwV20iZYE?autoplay=1&mute=1">
 	</iframe>
+	</div>
 
 </body>
 </html>
