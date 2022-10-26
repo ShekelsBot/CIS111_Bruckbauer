@@ -73,7 +73,9 @@ Mehran Viseh
 	<li><a href="#about">About</a></li>
 </ul>
 
-<div class="w3-container w3-green">
+<p id="displayDateTime"></p>
+
+<div class="Main">
 	<h1>About Me</h1>
 </div>
 
@@ -106,7 +108,7 @@ Mehran Viseh
 	</div>
 </div>		
 
-	<div class="w3-third">
+	<div class="Main 2">
 		<h2>The end goal</h2>
 		<p>
 		My end goal is to get a job in software engineering. Id like to be working on the systems in cars.
@@ -124,4 +126,11 @@ Mehran Viseh
 	</div>
 
 </body>
+
+<script type="text/javascript">
+  var today = new Date();
+   
+  document.getElementById("displayDateTime").innerHTML = today;
+ 
+  </script>
 </html>
