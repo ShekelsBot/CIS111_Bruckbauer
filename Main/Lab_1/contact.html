@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 Andrew Bruckbauer
-9/27/2022
+11/11/2022
 CIS 311
 Mehran Viseh
 
@@ -10,11 +10,18 @@ You can add more fields if you think it is necessary for your website.
 You need also to add a paragraph about the purpose of this code. 
 Please use bootstrap HTML 5 templates (responsive format) from the following link or use any responsive format of your choice for this lab assignment.
 
-The purpose of this code is to create a form for users to input their Name, Email, Phone, and a Message. Using the POST method.
-Not sure where to send the responses yet.
+UPDATE:
+Write a jQuery code to format a phone number as following examples below when you enter them to an online input field. 
+You need also to add a paragraph about the purpose of this code.
+
+Was not able to get a jQuery example to work. 
+I instead oppted to change the input type on email and phone to password so that it would mask the input with ****
 -->
 <html>
 <head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		@import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -40,10 +47,20 @@ Not sure where to send the responses yet.
 		border-radius: 4px;
 		box-sizing: border-box;
 	}
+    
+    input[type=password], select {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
 
 	input[type=submit] {
 		width: 100%;
-		background-color: #333;
+		background-color: #4CAF50;
 		color: white;
 		padding: 14px 20px;
 		margin: 8px 0;
@@ -53,7 +70,7 @@ Not sure where to send the responses yet.
 	}
 
 	input[type=submit]:hover {
-		background-color: #111;
+		background-color: #45a049;
 	}
 
 	div {
@@ -66,18 +83,20 @@ Not sure where to send the responses yet.
 </head>
 
 <h2> Contact Us </h2>
+<body>
 <div>
-	<form action="lab_1/action.html" method="post">
+	<form name="contact" action="/action_page.php" onsubmit="return validateForm()" method="post">
 		<label for="fname">First Name:</label><br>
-		<input type="text" id="fname" name="fname" placeholder='Joey' required><br>
+		<input type="text" id="fname" name="fname" placeholder='Joey'><br>
 		<label for="lname">Last Name:</label><br>
-		<input type="text" id="lname" name="lname" placeholder='Salads' required><br>
+		<input type="text" id="lname" name="lname" placeholder='Salads'><br>
 		<label for="email">Email:</label><br>
-		<input type="text" id="email" name="email" placeholder='JoeyS@Gmail.com' required><br>
+		<input type="password" id="email" name="email" placeholder='JoeyS@Gmail.com'><br>
 		<label for="phone">Phone Number:</label><br>
-		<input type="text" id="phone" name="phone" placeholder='720-123-1234' required><br>
+		<input type="password" id="phone" name="phone" placeholder='720-123-1234'><br>
 		<input type="submit" value="Submit">
 	</form>
 	<br>
-	<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter text here..." required></textarea>
+	<textarea rows="4" cols="50" name="comment" form="usrform">
+Enter text here...</textarea>
 </div>
